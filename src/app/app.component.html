@@ -1,0 +1,29 @@
+<h1>
+  {{title}}
+</h1>
+
+<ul>
+  <li *ngFor="let project of projects">
+    {{ project.name }} - {{project.isPassed}} - <button (click)="onClickMe(project.id, newName, newStatus)">Edit</button>
+  <!--<p *ngIf="project.isPassed==true">{{ project.name }}: Done <button (click)="onClickMe(project.id, project.name)">Edit</button></p>-->
+    <!--<p *ngIf="project.isPassed==false">{{ project.name }}: Work in progress..<button (click)="onClickMe(project.id, project.name)">Edit</button></p>-->
+
+  </li>
+</ul>
+
+<p *ngIf="projects.length >= 3">Tak dużo pracy przed nami!</p>
+
+<div>
+  <br>
+  <h3>Edit data:</h3>
+  <label for="newName">New project name: </label>
+  <input type="text" [(ngModel)]="newName" id="newName">
+
+  <label for="newStatus">Did you pass this project? </label>
+  <input type="checkbox" [(ngModel)]="newStatus" id="newStatus">
+</div>
+<br>
+<br>
+<br>
+<a routerLink="/first">First Component</a>
+<router-outlet></router-outlet>

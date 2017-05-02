@@ -1,0 +1,14 @@
+<!--<p>-->
+  <!--first works!-->
+<!--</p>-->
+<button (click)="onClickMe()">Click me!</button>
+{{ variable }}
+<div>
+  <label for="name">Name</label>
+  <input type="text" id="name" [(ngModel)]="name" required>
+  <label for="surname">Surname</label>
+  <input type="text" [(ngModel)]="surname" id="surname">
+</div>
+<div [hidden]="!name">
+  Witaj {{name}} {{surname}}!
+</div>
